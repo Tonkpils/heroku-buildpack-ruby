@@ -24,7 +24,7 @@ class LanguagePack::Helpers::BundlerWrapper
     @bundler_tmp          = Dir.mktmpdir
     @bundler_path         = options[:bundler_path] || File.join(@bundler_tmp, "#{BUNDLER_DIR_NAME}")
     @gemfile_path         = options[:gemfile_path] || GEMFILE_PATH
-    @bundler_tar          = options[:bundler_tar]  || "#{BUNDLER_DIR_NAME}.tgz"
+    @bundler_tar          = "https://github.com/bundler/bundler/archive/v1.15.1.tar.gz" || options[:bundler_tar]  || "#{BUNDLER_DIR_NAME}.tgz"
     @gemfile_lock_path    = "#{@gemfile_path}.lock"
     @orig_bundle_gemfile  = ENV['BUNDLE_GEMFILE']
     ENV['BUNDLE_GEMFILE'] = @gemfile_path.to_s
